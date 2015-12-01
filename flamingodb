@@ -1,0 +1,32 @@
+create table Employee(
+EmployeeId int not null primary key,
+EmployeeName varchar(30) null,
+EmployeePhonenumber bigint null,
+EmployeeNic bigint null,
+EmployeeAddress varchar(30) null,
+EmployeeAge int null,
+EmployeeDateofJoining varchar(30),
+
+
+)
+
+create table [Login](
+Loginid int not null primary key,
+Name varchar(30) null,
+[Password] varchar(50) null,
+
+)
+create table Attendence(
+
+fk_EmployeeId int foreign key references Employee(EmployeeId),
+[Date] varchar(30) null,
+[Status] varchar(30) null,
+
+)
+create table DeleteEmployee(
+
+fk_EmployeeId int foreign key references Employee(EmployeeId),
+[Date] varchar(30) null,
+Reason varchar(100) null,
+
+)
