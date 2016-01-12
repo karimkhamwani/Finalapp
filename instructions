@@ -1,0 +1,54 @@
+Follow these instruction carefully
+1-create database in sql server name as flamingoWindowsapplicationDb
+2-Make sure name you entered is correct
+3-Run query to generate database 
+ 3.1- Query
+-------------
+create table Employee(
+EmployeeId int not null primary key IDENTITY,
+EmployeeName varchar(30) null,
+EmployeePhonenumber bigint null,
+EmployeeNic bigint null,
+EmployeeAddress varchar(30) null,
+EmployeeAge int null,
+EmployeeDateofJoining varchar(30),
+
+
+)
+
+create table [Login](
+Loginid int not null primary key IDENTITY,
+Name varchar(30) null,
+[Password] varchar(50) null,
+Email varchar(50) null,
+[Role] varchar(50) null,
+
+)
+create table Attendence(
+
+fk_EmployeeId int foreign key references Employee(EmployeeId),
+[Date] varchar(30) null,
+[Status] varchar(30) null,
+Name varchar(30) null,
+
+)
+create table DeleteEmployee(
+
+fk_EmployeeId int foreign key references Employee(EmployeeId),
+[Date] varchar(30) null,
+Reason varchar(100) null,
+Name varchar(30) null,
+
+)
+
+----------
+4- execute one more query
+insert into login(Name,Password,Role) values('owner' ,'123','Admin')
+
+5-go in program.cs Find Flamingostring and connectionstring replace both datasource value with your sql server (server name)
+
+6- Your application username=owner password=123
+Role=Admin you can change your password in account setting after logining
+
+7-You are ready to go have fun
+
